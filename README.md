@@ -1,6 +1,6 @@
-# online_payment
+# country_api
 
-This is a code repository for a test online payments.
+This is a code repository for a geo-country api .
 
 ## Setup
 
