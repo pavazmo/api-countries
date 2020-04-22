@@ -11,3 +11,7 @@ from the root of the directory structure.
 <code>node convert-to-geojson.js</code>
 * Run the app
 <code>node app</code>
+* Check <a href='https://documenter.getpostman.com/view/2593620/SzYUaMGC?version=latest'>postman documentation</a>
+
+
+
