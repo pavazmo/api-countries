@@ -9,7 +9,7 @@ fs.readFile('./countries.csv', async (err, data) => {
     console.error(err)
     return
   }
-  
+
   var data = await neatCsv(data);
   var jsonData = GeoJSON.parse(data, {Point: ['latitude', 'longitude']})
   var countries = jsonData.features;
@@ -20,7 +20,13 @@ fs.readFile('./countries.csv', async (err, data) => {
     dbo.collection('countries').insert(countries, function(err, res) {
         if (err) throw err;
         console.log('Countries inserted');
+    });
+
+    dbo.collection('countries').createIndex({geometry:"2dsphere"}, function(err,res){
+        if (err) throw errr;
+        console.log('Index created')
         db.close();
     });
+  
   });
 })
